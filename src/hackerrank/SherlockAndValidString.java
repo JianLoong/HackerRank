@@ -39,15 +39,6 @@ public class SherlockAndValidString {
         checkFrequency(map);
     }
 
-    public static boolean isAllEqual(int[] a) {
-        for (int i = 1; i < a.length; i++) {
-            if (a[0] != a[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     public static void checkFrequency(Map mp) {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         Iterator it = mp.entrySet().iterator();
