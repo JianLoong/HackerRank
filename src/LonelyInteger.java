@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hackerrank;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.nio.*;
 
 /**
  *
@@ -34,6 +34,7 @@ public class LonelyInteger {
 
         //System.out.println(unique[unique.length - 1]);
         System.out.println(a);
+
 
 
     }

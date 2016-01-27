@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hackerrank;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -33,7 +32,6 @@ public class FunnyString {
     public static boolean funnyOrNot(String str) {
         //Reverse string
         String reverse = new StringBuilder(str).reverse().toString();
-        //System.out.println(str.charAt(1) - str.charAt(0));
         ArrayList<Integer> strValues = new ArrayList<>();
         ArrayList<Integer> revValues = new ArrayList<>();
         for (int i = 1; i < str.length(); i++) {
@@ -45,8 +43,7 @@ public class FunnyString {
         }
 
         for (int i = 0; i < str.length() - 1; i++) {
-//            System.out.print(strValues.get(i) + " ");
-//            System.out.println(revValues.get(i));
+
             if (!strValues.get(i).equals(revValues.get(i))) {
                 return false;               
             }

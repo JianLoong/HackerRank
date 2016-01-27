@@ -8,3 +8,8 @@
 manifest.mf
 /build/
 /dist/
+*.class
+
+*.iml
+
+.idea/.name

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hackerrank;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -44,7 +43,7 @@ public class SherlockAndValidString {
         Iterator it = mp.entrySet().iterator();
 
         while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry) it.next();
+            Entry pair = (Entry) it.next();
             int value = (int) pair.getValue();
             if (map.containsKey(value)) {
                 map.put(value, map.get(value) + 1);

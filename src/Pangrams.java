@@ -1,5 +1,3 @@
-package hackerrank;
-
 import java.util.*;
 
 public class Pangrams {
