@@ -7,9 +7,11 @@ package hackerrank;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 /**
@@ -21,59 +23,60 @@ public class SherlockAndValidString {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner sc = new Scanner(new FileReader("testcase.txt"));
 
-        //HashSet<String,Integer> hs = new HashSet();
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
         String s = sc.next();
         s = s.replaceAll("\\s+", "");
-        s = s.toLowerCase();
+        s = s.toLowerCase().trim();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             Integer val = map.get(new Character(c));
             if (val != null) {
-                map.put(c, new Integer(val + 1));
+                map.put(c, val + 1);
             } else {
                 map.put(c, 1);
             }
         }
-        System.out.println(map);
-        printMap(map);
-
-        //System.out.println(map);
+        checkFrequency(map);
     }
 
-    public static void printMap(Map mp) {
-
-        int frequencies[] = new int[mp.size()];
-        Iterator it = mp.entrySet().iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry) it.next();
-            frequencies[i] = (int) pair.getValue();
-            i++;
-            //System.out.println(pair.getKey() + " = " + pair.getValue());
-            //if((int)pair.getValue() % 2 != 0){
-            //    //System.out.println("Unique");
-            //    count++;
-            //}
-            //it.remove(); // avoids a ConcurrentModificationException
-        }
-        
-        System.out.println(checkFrequencies(frequencies));
-
-    }
-
-    public static boolean checkFrequencies(int[] array) {
-        boolean flag = true;
-        int first = array[0];
-        for (int i = 1; i < array.length && flag; i++) {
-            if (array[i] != first) {
-                flag = false;
+    public static boolean isAllEqual(int[] a) {
+        for (int i = 1; i < a.length; i++) {
+            if (a[0] != a[i]) {
+                return false;
             }
         }
-    
-        if(flag) 
-            return true;
-        return false;
+        return true;
     }
-    
+
+    public static void checkFrequency(Map mp) {
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        Iterator it = mp.entrySet().iterator();
+
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry) it.next();
+            int value = (int) pair.getValue();
+            if (map.containsKey(value)) {
+                map.put(value, map.get(value) + 1);
+            } else {
+                map.put(value, 1);
+            }
+            //it.remove(); // avoids a ConcurrentModificationException
+        }
+
+        if (map.size() == 1) {
+            System.out.println("YES");
+        } else {
+            if (map.size() == 2) {
+                int maxValueInMap = (Collections.max(map.values()));
+                int minValueInMap = (Collections.min(map.values()));
+                if ( minValueInMap - 1 == maxValueInMap || minValueInMap - 1 == 0 ){
+                    System.out.println("YES");
+                } else {
+                    System.out.println("NO");
+                }
+            } else {
+                System.out.println("NO");
+            }
+        }
+    }
 }
