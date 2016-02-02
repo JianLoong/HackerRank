@@ -37,8 +37,6 @@ public class SnakeAndLadders {
             positions.add(intialPos);
 
             int steps = 0;
-
-
             int iterations = 10000000;
             boolean flag = false;
 
