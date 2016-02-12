@@ -55,6 +55,11 @@ public class StringReduction {
             return s.length();
         }
 
+        if (hm.get('a') == 0 && hm.get('b') != 0 && hm.get('c') == 0) {
+            return s.length();
+        }
+
+
         return 1;
     }
 }

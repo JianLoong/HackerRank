@@ -38,32 +38,4 @@ public class IceCreamParlor {
             }
         }
     }
-
-    /**
-     * Binary search doesnt seem to work due to duplicate values
-     * @param prices
-     * @param money
-     * @param mp
-     */
-//    public static void solve(int[] prices , int money, Map mp){
-//        int length = prices.length;
-//        if(length < 2)
-//            return;
-//
-//        int left = 0;
-//        int right = length - 1;
-//
-//        while( left < right){
-//            int sum = prices[left] + prices[right];
-//            if (sum == money){
-//                System.out.println(mp.get(prices[left]) + " " + mp.get(prices[right]));
-//                left = left + 1;
-//                right = right - 1;
-//            }else if ( sum <  money){
-//                left = left + 1;
-//            }else if ( sum > money) {
-//                right = right - 1;
-//            }
-//        }
-//    }
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /*
  * Based on http://binfalse.de/2010/09/08/advanced-searching-via-z-algorithm/
- * To question requires the addition of the initial string length and calcuation in bigint to pass last 2 cases
+ * The question requires the addition of the initial string length and calculation in bigint to pass last 2 cases
  */
 public class StringSimilarity {
 

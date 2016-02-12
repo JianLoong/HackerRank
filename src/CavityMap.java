@@ -27,7 +27,6 @@ public class CavityMap {
             sideGrids.add(right);
             left += size;
             right += size;
-
         }
 
         ArrayList<Integer> positions = new ArrayList<>();

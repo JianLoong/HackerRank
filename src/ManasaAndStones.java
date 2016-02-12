@@ -20,8 +20,6 @@ public class ManasaAndStones {
             int a = sc.nextInt();
             int b = sc.nextInt();
 
-            //Notice that some of the stones will have same number
-            //regardless of numbers
             for(int i = 0; i < n; i++) {
                 sol.add(a*(n-i-1) + b*i);
             }

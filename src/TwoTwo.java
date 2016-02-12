@@ -27,7 +27,6 @@ public class TwoTwo {
                 }
             }
         }
-
         System.out.println(infixes);
 
     }
