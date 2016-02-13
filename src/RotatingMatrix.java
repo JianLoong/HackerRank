@@ -39,6 +39,7 @@ public class RotatingMatrix {
         return list;
     }
 
+    // Recursively obtain all the outer values in swap them depending on rotation
     public static void rotateList(ArrayList<Integer> matrix, int m, int n, int rotation, int columnSize) {
         if (m == 0 || n == 0) {
             return;
@@ -78,6 +79,7 @@ public class RotatingMatrix {
         rotateList(matrix, m - 2, n - 2, rotation, columnSize);
     }
 
+    // Filling up the matrix in a circular pattern
     public static void displayResult(ArrayList<Integer> result, int m, int n) {
         int[][] spiral = new int[m][n];
         int value = 0;

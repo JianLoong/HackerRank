@@ -27,7 +27,8 @@ public class ServiceLane {
         }
     }
 
-    //
+    // Simple way of evaluating the width. The complexity is potentially lower than O(n)
+    // due to the return. However if no 1s are found it will still go to the end.
     public static int solve(int[] width, int enter, int exit) {
         boolean flag = false;
         for (int i = enter; i <= exit; i++) {

@@ -21,11 +21,7 @@ public class EvenTree {
         Iterator it = edges.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry)it.next();
-            //System.out.println(pair.getKey() + " = " + pair.getValue());
-            //it.remove(); // avoids a ConcurrentModificationException
-            //System.out.println(pair.getValue());
             List<String> list = (List<String>) pair.getValue();
-            //System.out.println(list);
             if(list.contains(dest))
                 return pair.getKey() + "";
         }
@@ -85,11 +81,11 @@ public class EvenTree {
                 break;
             String next = queue.remove();
 
-
+            // Get the number of children based on this current node.
             int numChild = getNumChildren(next);
             //System.out.print("At vertice: " + next + " : " + numChild + "\n");
 
-            //System.out.println(numChild);
+            // Check if the number of children are even. If they are add the counter.
             if ((numChild & 1) != 0 && numChild != 0 && next != 1 + "") {
                 count++;
                 String source = getSource(next);
