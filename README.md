@@ -12,7 +12,8 @@ Since I test most of the codes locally before uploading them onto Hacker Rank, I
 You can replace this with "System.in" to run it on Hacker Rank.
 
 
-## Algorithms
+## Algorithm
+### Implementations
 
 * Angry Professor
 * Sherlock and The Beast
@@ -36,7 +37,7 @@ You can replace this with "System.in" to run it on Hacker Rank.
 * [Algo] Matrix Rotation
 
 
-## String
+### String
 
 * Pangrams
 * Funny String
@@ -53,14 +54,41 @@ You can replace this with "System.in" to run it on Hacker Rank.
 * Sherlock and Valid String
 * String Similarity
 
-## Search
+### Search
 
 * Ice Cream Parlor
 * Missing Numbers
 * Pairs
 
-## Graph Theory
+### Graph Theory
 
 * Breadth First Search: Shortest Reach
 * Even Tree
 * Snakes and Ladders: The Quickest Way Up
+
+### Greedy
+
+* Mark and Toys
+* Sherlock and Minimax
+* Two Arrays
+* Priyanka and Toys
+* Largest Permutation
+* Greedy Florist
+* Max Min
+
+### Dynamic Programming
+
+* Fibonacci Modified
+* The Maximum Subarray
+* The Coin Change Problem
+* Candies
+* Stock Maximize
+* Knapsack
+* The Longest Increasing Subsequence
+* The Longest Common Subsequence
+* String Reduction
+
+### Bit Manipulation
+
+* Lonely Integer
+* Maximizing XOR
