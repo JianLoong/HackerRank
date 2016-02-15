@@ -1,9 +1,9 @@
 # Hacker Rank
 
 HackerRank solutions done in Java. This page list mostly completed solutions. Please feel free to do a
-pull request to ask a question or to fix an issue or to propose a better solution. This repository is mainly
-for practice and understanding purposes. Most solutions are my own however some of them are from other authors as
-I treated this as both a learning and practising process for myself. I have mostly credited the authors where I could
+pull request or open an issue to ask a question or to propose a better solution. This repository is mainly
+for practice and self learning purposes. Most solutions are my own however some of them are from other authors as
+I treated this as both a learning and understanding process for myself. I have mostly credited the authors where I could
 and included where I obtained the sources used to obtain my answers.
 
 ##### Run instructions
