@@ -1,6 +1,4 @@
 package algorithm.greedy;
-
-import javax.swing.text.Caret;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -8,21 +6,17 @@ import java.util.stream.Stream;
 
 /**
  * Created by Jian on 15/02/2016.
+ *
+ * The idea for this solution is to add up the time the order was placed and the time
+ * it takes to process the order. After that sort them based on that time.
  */
 public class JimAndTheOrders {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner sc = new Scanner(new FileInputStream("testcase.txt"));
 
         int n = sc.nextInt();
-
-
-        int[][] fanProcess = new int[n][n];
+        int[][] fanProcess = new int[n][2];
         Map<Integer, Integer> order = new LinkedHashMap<>();
-
-        if (n == 1) {
-            System.out.println("1");
-            return;
-        }
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < 2; j++) {
@@ -39,8 +33,6 @@ public class JimAndTheOrders {
         for (Integer integer : order.keySet()) {
             System.out.print(integer + " ");
         }
-
-
     }
 
     public static <K, V extends Comparable<? super V>> Map<K, V>

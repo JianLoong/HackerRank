@@ -9,7 +9,8 @@ and included where I obtained the sources used to obtain my answers.
 ##### Run instructions
 
 Since I test most of the codes locally before uploading them onto Hacker Rank, I have a testcase.txt file.
-You can replace this with "System.in" to run it on Hacker Rank.
+You should replace this with "System.in" to run it on Hacker Rank. You will also need to remove the package
+declaration.
 
 
 ## Algorithm
@@ -61,6 +62,14 @@ You can replace this with "System.in" to run it on Hacker Rank.
 * Pairs
 * Sherlock and Array
 
+#### Sorting
+
+* Bigger is Greater
+* Closest Numbers
+* Quick Sort 1
+* Sherlock and Watson
+* Running Time Of Algorithms
+
 #### Graph Theory
 
 * Breadth First Search: Shortest Reach
@@ -90,11 +99,13 @@ You can replace this with "System.in" to run it on Hacker Rank.
 * The Longest Increasing Subsequence
 * The Longest Common Subsequence
 * String Reduction
+* Sherlock and Cost
 
 #### Bit Manipulation
 
 * Lonely Integer
 * Maximizing XOR
+* Sansa and XOR
 
 ## Data Structures
 

@@ -7,6 +7,9 @@ import java.util.Scanner;
 
 /**
  * Created by Jian on 15/02/2016.
+ *
+ * The main idea here is to sort each row. After sorting each row, the entire 2d array is passed into another
+ * function to check if it is valid.
  */
 public class GridChallenge {
     public static void main(String[] args) throws FileNotFoundException {
