@@ -1,4 +1,4 @@
-package datastructures.arrays;
+package datastructures.arrays.Arrays;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

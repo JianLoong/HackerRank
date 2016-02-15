@@ -13,7 +13,7 @@ You can replace this with "System.in" to run it on Hacker Rank.
 
 
 ## Algorithm
-### Implementations
+#### Implementations
 
 * Angry Professor
 * Sherlock and The Beast
@@ -37,7 +37,7 @@ You can replace this with "System.in" to run it on Hacker Rank.
 * [Algo] Matrix Rotation
 
 
-### String
+#### String
 
 * Pangrams
 * Funny String
@@ -54,19 +54,20 @@ You can replace this with "System.in" to run it on Hacker Rank.
 * Sherlock and Valid String
 * String Similarity
 
-### Search
+#### Search
 
 * Ice Cream Parlor
 * Missing Numbers
 * Pairs
+* Sherlock and Array
 
-### Graph Theory
+#### Graph Theory
 
 * Breadth First Search: Shortest Reach
 * Even Tree
 * Snakes and Ladders: The Quickest Way Up
 
-### Greedy
+#### Greedy
 
 * Mark and Toys
 * Sherlock and Minimax
@@ -75,8 +76,9 @@ You can replace this with "System.in" to run it on Hacker Rank.
 * Largest Permutation
 * Greedy Florist
 * Max Min
+* Grid Challenge
 
-### Dynamic Programming
+#### Dynamic Programming
 
 * Fibonacci Modified
 * The Maximum Subarray
@@ -88,7 +90,12 @@ You can replace this with "System.in" to run it on Hacker Rank.
 * The Longest Common Subsequence
 * String Reduction
 
-### Bit Manipulation
+#### Bit Manipulation
 
 * Lonely Integer
 * Maximizing XOR
+
+## Data Structures
+
+#### Arrays
+* Sparse Arrays

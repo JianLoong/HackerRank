@@ -4,11 +4,13 @@ package algorithm.implementation;/*
  * and open the template in the editor.
  */
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class UtopianTree {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner in = new Scanner(new FileInputStream("testcase.txt"));
         int numCases = in.nextInt();
         for (int i = 0; i < numCases; i++) {
             int n = in.nextInt();
