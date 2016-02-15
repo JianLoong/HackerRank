@@ -77,6 +77,7 @@ You can replace this with "System.in" to run it on Hacker Rank.
 * Greedy Florist
 * Max Min
 * Grid Challenge
+* Jim and the Orders
 
 #### Dynamic Programming
 
