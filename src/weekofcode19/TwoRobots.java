@@ -81,12 +81,10 @@ public class TwoRobots {
                     r2r2 = r2 + Math.abs(mA[i] - mA[i + 1]);
 
 
-                    System.out.println("R1R1 : " + r1r1);
-                    System.out.println("R1R2 : " + r1r2);
-                    System.out.println("R2R1 : " + r2r1);
-                    System.out.println("R2R2 : " + r2r2);
 
                     int[] min = {r1r1, r1r2, r2r1, r2r2};
+
+                    System.out.println("Ori Array: " + Arrays.toString(min));
                     Arrays.sort(min);
 
                     System.out.println("Min Array: " + Arrays.toString(min));
@@ -96,22 +94,22 @@ public class TwoRobots {
                     if (r1r1 == min[0]) {
                         moves[i] = 1;
                         moves[i + 1] = 1;
-                        r1Pos = mB[i];
+                        r1Pos = mA[i];
                     }
                     if (r1r2 == min[0]) {
                         moves[i] = 1;
                         moves[i + 1] = 2;
-                        r1Pos = mB[i];
+                        r1Pos = mA[i];
                     }
                     if (r2r1 == min[0]) {
                         moves[i] = 2;
                         moves[i + 1] = 1;
-                        r2Pos = mB[i];
+                        r2Pos = mA[i];
                     }
                     if (r2r2 == min[0]) {
                         moves[i] = 2;
                         moves[i + 1] = 2;
-                        r2Pos = mB[i];
+                        r2Pos = mA[i];
                     }
                 }
             }

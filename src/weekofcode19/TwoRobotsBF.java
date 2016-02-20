@@ -46,6 +46,9 @@ public class TwoRobotsBF {
 
             System.out.println("Min is " + min + " : " + map.get(min + ""));
             System.out.println(min);
+
+            hm.clear();
+
         }
     }
 
