@@ -57,20 +57,8 @@ public class TwoRobotsBF {
         int distance = 0;
         int r1Pos = 0;
         int r2Pos = 0;
-        String s = String.valueOf(moves);
 
         for (int i = 0; i < moves.length; i++) {
-            String str = s.substring(0, i + 1);
-
-            while (hm.containsKey(str)) {
-                Map<String, Integer> m = hm.get(str);
-                i = m.get("Moves") + 1;
-                distance = m.get("Distance");
-                r1Pos = m.get("R1");
-                r2Pos = m.get("R2");
-                str = s.substring(0,i + 1);
-            }
-
             if (i < moves.length) {
                 if (moves[i] == '0') {
                     if (r1Pos != 0)
@@ -85,12 +73,7 @@ public class TwoRobotsBF {
                     distance += Math.abs(mA[i] - mB[i]);
                     r2Pos = mB[i];
                 }
-                Map map = new HashMap<String, Integer>();
-                map.put("R1", r1Pos);
-                map.put("R2", r2Pos);
-                map.put("Distance", distance);
-                map.put("Moves", i);
-                hm.put(s.substring(0, i + 1), map);
+
 
                 if(distance > min)
                     return min;

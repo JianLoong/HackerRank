@@ -171,7 +171,8 @@ public class CoolGuyAndTwoSubsequences {
             for (int b = a; b < n; b++) {
                 for (int c = b + 1; c < n; c++) {
                     for (int d = c; d < n; d++) {
-                        ans = (ans + Math.min(minInterval(sg, a, b), minInterval(sg, c, d))) % 1000000007;
+                        System.out.println("a " + a + " b " + b + " c " + c + " d " + d);
+                        //ans = (ans + Math.min(minInterval(sg, a, b), minInterval(sg, c, d))) % 1000000007;
                     }
                 }
             }

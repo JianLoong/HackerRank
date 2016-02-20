@@ -5,6 +5,7 @@ package weekofcode19;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.math.BigInteger;
 import java.util.*;
 
 /**
@@ -18,53 +19,57 @@ public class ScalarProducts {
         int a1 = sc.nextInt();
         int m = sc.nextInt();
         int n = sc.nextInt();
-        int[] sequence = new int[2 * n + 2];
 
-        ArrayList<Point> vectors = new ArrayList();
+        if (n == 1) {
+            System.out.println(0);
+            return;
+        }
+
+        int length = 2 * n + 2;
+        int[] sequence = new int[length];
+
         sequence[0] = 0;
         sequence[1] = a1;
 
-        for (int i = 2; i < sequence.length; i++) {
-            sequence[i] = (sequence[i - 1] + sequence[i - 2]) % m;
+        for (int i = 2; i < length; i++) {
+            sequence[i] = ((sequence[i - 1] % m) + (sequence[i - 2]) % m) % m;
         }
 
-        for (int i = 2; i < sequence.length; i = i + 2) {
-            Point v = new Point(sequence[i], sequence[i + 1]);
-            vectors.add(v);
+        int[][] ve = new int[(length / 2) - 1][2];
+        int count = 0;
+        for (int i = 2; i < length; i = i + 2) {
+            ve[count][0] = sequence[i];
+            ve[count][1] = sequence[i + 1];
+            count++;
         }
+
+        //System.out.println(Arrays.deepToString(ve));
 
         HashSet<Long> result = new HashSet<>();
-        HashMap<Integer, Long> hm = new HashMap<>();
 
-        for (int i = 0; i < vectors.size(); i++) {
-            for (int j = i + 1; j < vectors.size(); j++) {
-                int hash = vectors.get(i).hashCode() + vectors.get(j).hashCode();
-                if (hm.containsKey(hash)) {
-                    result.add(hm.get(hash));
-                } else {
-                    long r = scalarProduct(vectors.get(i), vectors.get(j), m);
-                    //if((m & (m - 1)) == 0){
-                    //    r = fastModulo(r,m);
-                    //}else {
-                    //     r = r % m;
-                    //}
+        for (int i = 0; i < ve.length; i++) {
+            for (int j = i + 1; j < ve.length; j++) {
+                //int hash = new Point(ve[i][0], ve[i][1]).hashCode() +  new Point(ve[j][0], ve[j][1]).hashCode();
+                //if (!result.contains(hash)) {
+                    long r = scalarProduct(ve[i][0], ve[i][1], ve[j][0], ve[j][1], m);
                     result.add(r);
-                    hm.put(hash, r);
-                }
+                //}
             }
         }
+
         System.out.println(result.size() % m);
 
-    }
-
-
-    public static long fastModulo(long dividend, int divisor) {
-        return dividend & (divisor - 1);
     }
 
     public static long scalarProduct(Point p1, Point p2, int m) {
         long A = ((p1.x % m) * (p2.x % m)) % m;
         long B = ((p1.y % m) * (p2.y % m)) % m;
+        return ((A % m) + (B % m)) % m;
+    }
+
+    public static long scalarProduct(long p1x, long p1y, long p2x, long p2y, int m) {
+        long A = ((p1x % m) * (p2x % m)) % m;
+        long B = ((p1y % m) * (p2y % m)) % m;
         return ((A % m) + (B % m)) % m;
     }
 
