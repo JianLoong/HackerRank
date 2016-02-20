@@ -2,6 +2,7 @@ package weekofcode19;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -41,11 +42,19 @@ public class ScalarProducts {
         }
 
         HashSet<Long> result = new HashSet<>();
+        HashMap<Long, Long> hm = new HashMap<>();
+
 
         for (int i = 0; i < ve.length; i++) {
             for (int j = i + 1; j < ve.length; j++) {
-                long r = scalarProduct(ve[i][0], ve[i][1], ve[j][0], ve[j][1], m);
-                result.add(r);
+                //long r = scalarProduct(ve[i][0], ve[i][1], ve[j][0], ve[j][1], m);
+                //result.add(r);
+                long product = scalarProduct(ve[i][0], ve[i][1], ve[j][0], ve[j][1]);
+                if(!hm.containsKey(product)) {
+                    long r = scalarProduct(ve[i][0], ve[i][1], ve[j][0], ve[j][1], m);
+                    hm.put(product, r);
+                    result.add(r);
+                }
             }
         }
 
@@ -53,6 +62,9 @@ public class ScalarProducts {
 
     }
 
+    public static long scalarProduct(long p1x, long p1y, long p2x, long p2y) {
+        return p1x * p2x + p1y * p2y;
+    }
 
     public static long scalarProduct(long p1x, long p1y, long p2x, long p2y, int m) {
         long A = ((p1x % m) * (p2x % m)) % m;
