@@ -2,11 +2,14 @@ package weekofcode19;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Scanner;
 
 /**
- * Created by Jian on 17/02/2016. Does not handle ties. Incumbent not implemented.
- * Make two list one for global canidates one for local. The incumbent happens at level 1000
+ * Created by Jian on 17/02/2016. Incumbent not implemented.
+ * Make two list one for global candidates one for local. The incumbent happens at level 1000?
  * same as the number of queries where the first solution is encountered.
  */
 public class BBTwoRobots {
@@ -99,34 +102,6 @@ public class BBTwoRobots {
                 }
             }
         }
-
-    }
-
-
-    public static int distanceSoFar(int[] mA, int[] mB, int[] moves) {
-        int distance = 0;
-        int r1Pos = 0;
-        int r2Pos = 0;
-
-        for (int i = 0; i < moves.length; i++) {
-            if (i < moves.length) {
-                if (moves[i] == 1) {
-                    if (r1Pos != 0)
-                        distance += Math.abs(r1Pos - mA[i]);
-                    distance += Math.abs(mA[i] - mB[i]);
-                    r1Pos = mB[i];
-                }
-                if (moves[i] == 2) {
-                    if (r2Pos != 0) {
-                        distance += Math.abs(r2Pos - mA[i]);
-                    }
-                    distance += Math.abs(mA[i] - mB[i]);
-                    r2Pos = mB[i];
-                }
-
-            }
-        }
-        return distance;
     }
 
     public static String print(Node node) {
@@ -137,11 +112,6 @@ public class BBTwoRobots {
         return "";
     }
 
-    /**
-     * This method finds the nearest R1 or R2 parent.
-     *
-     * @return
-     */
     public static Node find(int robot, Node node) {
         if (node.robotNo == robot) {
             return node;
