@@ -1,18 +1,15 @@
 package weekofcode19;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
-/**
- * Created by Jian on 18/02/2016.
- */
 public class ScalarProducts {
 
-    public static void main(String[] args) throws FileNotFoundException {
-        Scanner sc = new Scanner(new FileInputStream("testcase.txt"));
+    static HashMap<Long, Long> hm = new HashMap<>();
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
 
         int a1 = sc.nextInt();
         int m = sc.nextInt();
@@ -29,11 +26,21 @@ public class ScalarProducts {
         sequence[0] = 0;
         sequence[1] = a1;
 
+        HashMap<Integer, Integer> sumHash = new HashMap<>();
+
+
         for (int i = 2; i < length; i++) {
-            sequence[i] = ((sequence[i - 1] % m) + (sequence[i - 2]) % m) % m;
+            int sum = sequence[i - 1] + sequence[i - 2];
+            if (!sumHash.containsKey(sum)) {
+                int modSum = sum % m;
+                sequence[i] = modSum;
+                sumHash.put(sum, sequence[i]);
+            } else {
+                sequence[i] = sumHash.get(sum);
+            }
         }
 
-        int[][] ve = new int[(length / 2) - 1][2];
+        long[][] ve = new long[(length / 2) - 1][2];
         int count = 0;
         for (int i = 2; i < length; i = i + 2) {
             ve[count][0] = sequence[i];
@@ -42,23 +49,20 @@ public class ScalarProducts {
         }
 
         HashSet<Long> result = new HashSet<>();
-        HashMap<Long, Long> hm = new HashMap<>();
 
 
         for (int i = 0; i < ve.length; i++) {
             for (int j = i + 1; j < ve.length; j++) {
-                //long r = scalarProduct(ve[i][0], ve[i][1], ve[j][0], ve[j][1], m);
-                //result.add(r);
                 long product = scalarProduct(ve[i][0], ve[i][1], ve[j][0], ve[j][1]);
-                if(!hm.containsKey(product)) {
-                    long r = scalarProduct(ve[i][0], ve[i][1], ve[j][0], ve[j][1], m);
+                if (!hm.containsKey(product)) {
+                    long r = scalarProductMod(ve[i][0], ve[i][1], ve[j][0], ve[j][1], m);
                     hm.put(product, r);
                     result.add(r);
                 }
             }
         }
 
-        System.out.println(result.size() % m);
+        System.out.println( result.size() % m);
 
     }
 
@@ -66,10 +70,12 @@ public class ScalarProducts {
         return p1x * p2x + p1y * p2y;
     }
 
-    public static long scalarProduct(long p1x, long p1y, long p2x, long p2y, int m) {
-        long A = ((p1x % m) * (p2x % m)) % m;
-        long B = ((p1y % m) * (p2y % m)) % m;
-        return ((A % m) + (B % m)) % m;
+
+    public static long scalarProductMod(long p1x, long p1y, long p2x, long p2y, int m) {
+        long l = p1x * p2x;
+        long r = p1y * p2y;
+
+        return ( l + r ) % m;
     }
 
 }
