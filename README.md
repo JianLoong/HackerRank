@@ -61,6 +61,8 @@ declaration.
 * Missing Numbers
 * Pairs
 * Sherlock and Array
+* Cut The Tree
+
 
 #### Sorting
 
