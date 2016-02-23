@@ -29,6 +29,14 @@ public class TwoRobotsBF {
                 mA[i] = sc.nextInt();
                 mB[i] = sc.nextInt();
             }
+
+
+
+            //char[] moves= {'0','1','1','0'};
+            //System.out.println(distanceSoFar(mA,mB, moves));
+
+
+
             int value = queries;
             int min = Integer.MAX_VALUE;
 
@@ -38,7 +46,7 @@ public class TwoRobotsBF {
                     binary.insert(0, '0');
                 }
 
-                int distance = distanceSoFar(mA, mB, binary.toString().toCharArray(), min);
+                int distance = distanceSoFar(mA, mB, binary.toString().toCharArray());
 
                 map.put(distance + "", binary.toString());
                 min = Math.min(min, distance);
@@ -53,7 +61,7 @@ public class TwoRobotsBF {
     }
 
 
-    public static int distanceSoFar(int[] mA, int[] mB, char[] moves, int min) {
+    public static int distanceSoFar(int[] mA, int[] mB, char[] moves) {
         int distance = 0;
         int r1Pos = 0;
         int r2Pos = 0;
@@ -73,10 +81,6 @@ public class TwoRobotsBF {
                     distance += Math.abs(mA[i] - mB[i]);
                     r2Pos = mB[i];
                 }
-
-
-                if(distance > min)
-                    return min;
             }
         }
         return distance;

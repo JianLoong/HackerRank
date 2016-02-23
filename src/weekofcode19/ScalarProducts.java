@@ -55,28 +55,18 @@ public class ScalarProducts {
             for (int j = i + 1; j < ve.length; j++) {
                 long product = scalarProduct(ve[i][0], ve[i][1], ve[j][0], ve[j][1]);
                 if (!hm.containsKey(product)) {
-                    long r = scalarProductMod(ve[i][0], ve[i][1], ve[j][0], ve[j][1], m);
+                    long r = product % m;
                     hm.put(product, r);
                     result.add(r);
                 }
             }
         }
-
-        System.out.println( result.size() % m);
+        System.out.println(hm.getOrDefault(result.size(), (long) result.size() % m));
 
     }
 
     public static long scalarProduct(long p1x, long p1y, long p2x, long p2y) {
         return p1x * p2x + p1y * p2y;
     }
-
-
-    public static long scalarProductMod(long p1x, long p1y, long p2x, long p2y, int m) {
-        long l = p1x * p2x;
-        long r = p1y * p2y;
-
-        return ( l + r ) % m;
-    }
-
 }
 

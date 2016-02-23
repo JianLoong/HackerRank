@@ -32,9 +32,9 @@ public class TwoRobot {
 
             for (int i = 0; i < nax; ++i)
                 for (int j = 1; j < nax; ++j)
-                    dp[i][j] = 1000000000;
+                    dp[i][j] = 1000;
 
-            int res = 1000000000;
+            int res = 1000;
 
             for (int i = 0; i < m; ++i) {
                 for (int j = i; j <= m; ++j) {
