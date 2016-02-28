@@ -8,33 +8,30 @@ import java.util.Scanner;
  * Created by Jian on 22/02/2016.
  */
 public class TwoRobot {
-    int[] a;
-    int[] b;
-    int[][] dp;
+    int[] a = new int[1005];
+    int[] b = new int[1005];
+    int[][] dp = new int[1005][1005];
 
     public void solve() throws FileNotFoundException {
         Scanner sc = new Scanner(new FileInputStream("testcase.txt"));
         int t = sc.nextInt();
-        for (int test = 0; test < t; test++) {
+        for (int test = 0; test < t; ++test) {
             int nax = 1005;
             int n = sc.nextInt();
             int m = sc.nextInt();
-
-            a = new int[m+1];
-            b = new int[m+1];
 
             for (int i = 1; i <= m; ++i) {
                 a[i] = sc.nextInt();
                 b[i] = sc.nextInt();
             }
 
-            dp = new int[1005][1005];
+            dp = new int[nax][nax];
 
             for (int i = 0; i < nax; ++i)
                 for (int j = 1; j < nax; ++j)
-                    dp[i][j] = 1000;
+                    dp[i][j] = 1000000000;
 
-            int res = 1000;
+            int res = 1000000000;
 
             for (int i = 0; i < m; ++i) {
                 for (int j = i; j <= m; ++j) {
@@ -47,7 +44,7 @@ public class TwoRobot {
                     dp[j][j + 1] = Math.min(dp[j][j + 1], me + dist(i, j + 1));
                 }
             }
-            System.out.println((int)res);
+            System.out.println(res);
         }
 
     }

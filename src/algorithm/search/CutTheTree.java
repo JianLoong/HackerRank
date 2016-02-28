@@ -49,16 +49,13 @@ public class CutTheTree {
     public static void main(String[] args) throws FileNotFoundException {
         CutTheTree g = new CutTheTree();
         g.solve();
-
     }
 
 
     public int DFS(int start, Set<Integer> visited) {
-
         int ret = 0;
         visited.add(start);
         List<Integer> destinations = nodes.getOrDefault(start, new ArrayList<>());
-
         for (Integer i : destinations) {
             if (!visited.contains(i)) {
                 ret += DFS(i, visited);
