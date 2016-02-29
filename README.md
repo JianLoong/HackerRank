@@ -77,6 +77,8 @@ declaration.
 * Breadth First Search: Shortest Reach
 * Even Tree
 * Snakes and Ladders: The Quickest Way Up
+* Floyd: City of Blinding Lights
+
 
 #### Greedy
 
