@@ -79,6 +79,7 @@ declaration.
 * Snakes and Ladders: The Quickest Way Up
 * Floyd: City of Blinding Lights
 * Kruskal Really Special Subtree
+* Prims Special Subtree
 
 
 #### Greedy
